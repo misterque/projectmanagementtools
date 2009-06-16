@@ -1,0 +1,34 @@
+<h1>Listing buchungs</h1>
+
+<table>
+  <tr>
+    <th>Mitarbeiter</th>
+    <th>Projekt</th>
+    <th>Woche</th>
+    <th>Jahr</th>
+    <th>Geleistet</th>
+    <th>Gebucht</th>
+    <th>Beschreibung</th>
+    <th>Bestaetigung</th>
+  </tr>
+
+<% @buchungs.each do |buchung| %>
+  <tr>
+    <td><%=h buchung.mitarbeiter %></td>
+    <td><%=h buchung.projekt %></td>
+    <td><%=h buchung.woche %></td>
+    <td><%=h buchung.jahr %></td>
+    <td><%=h buchung.geleistet %></td>
+    <td><%=h buchung.gebucht %></td>
+    <td><%=h buchung.beschreibung %></td>
+    <td><%=h buchung.bestaetigung %></td>
+    <td><%= link_to 'Show', buchung %></td>
+    <td><%= link_to 'Edit', edit_buchung_path(buchung) %></td>
+    <td><%= link_to 'Destroy', buchung, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New buchung', new_buchung_path %>

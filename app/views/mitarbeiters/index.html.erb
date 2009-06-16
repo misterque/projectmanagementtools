@@ -1,0 +1,26 @@
+<h1>Listing mitarbeiters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Wochenstunden</th>
+    <th>Buchung</th>
+    <th>Projekt</th>
+  </tr>
+
+<% @mitarbeiters.each do |mitarbeiter| %>
+  <tr>
+    <td><%=h mitarbeiter.name %></td>
+    <td><%=h mitarbeiter.wochenstunden %></td>
+    <td><%=h mitarbeiter.buchung %></td>
+    <td><%=h mitarbeiter.projekt %></td>
+    <td><%= link_to 'Show', mitarbeiter %></td>
+    <td><%= link_to 'Edit', edit_mitarbeiter_path(mitarbeiter) %></td>
+    <td><%= link_to 'Destroy', mitarbeiter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New mitarbeiter', new_mitarbeiter_path %>

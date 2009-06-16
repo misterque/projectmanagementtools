@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mitarbeiter: 
+  projekt: 
+  woche: 1
+  jahr: 1
+  geleistet: 1.5
+  gebucht: 1.5
+  beschreibung: MyText
+  bestaetigung: MyText
+
+two:
+  mitarbeiter: 
+  projekt: 
+  woche: 1
+  jahr: 1
+  geleistet: 1.5
+  gebucht: 1.5
+  beschreibung: MyText
+  bestaetigung: MyText

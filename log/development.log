@@ -1,0 +1,142 @@
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuchungs (20090616185157)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "buchungs" already exists: CREATE TABLE "buchungs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mitarbeiter_id" integer, "projekt_id" integer, "woche" integer, "jahr" integer, "geleistet" float, "gebucht" float, "beschreibung" text, "bestaetigung" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMitarbeiters (20090616185830)
+Migrating to CreateProjekts (20090616185724)
+Migrating to CreateBuchungs (20090616185157)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("buchungs")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("mitarbeiters")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("projekts")[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuchungs (20090616185157)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "buchungs" already exists: CREATE TABLE "buchungs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mitarbeiter_id" integer, "projekt_id" integer, "woche" integer, "jahr" integer, "geleistet" float, "gebucht" float, "beschreibung" text, "bestaetigung" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuchungs (20090616185157)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "buchungs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mitarbeiter_id" integer, "projekt_id" integer, "woche" integer, "jahr" integer, "geleistet" float, "gebucht" float, "beschreibung" text, "bestaetigung" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090616185157')[0m
+Migrating to CreateProjekts (20090616185724)
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuchungs (20090616185157)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "buchungs"[0m
+  [4;36;1mSQL (91.3ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090616185157'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMitarbeiters (20090616190607)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "mitarbeiters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "wochenstunden" float, "buchung_id" integer, "projekt_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616190607')[0m
+Migrating to CreateProjekts (20090616190630)
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "projekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mitarbeiter_id" integer, "buchung_id" integer, "name" varchar(255), "fertigstellungsgrad" integer, "einstufungsgrad" integer, "budget" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616190630')[0m
+Migrating to CreateBuchungs (20090616190642)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "buchungs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mitarbeiter_id" integer, "projekt_id" integer, "woche" integer, "jahr" integer, "geleistet" float, "gebucht" float, "beschreibung" text, "bestaetigung" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090616190642')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("buchungs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("mitarbeiters")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("projekts")[0m
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 21:07:13) [GET]
+  [4;36;1mBuchung Load (1.1ms)[0m   [0;1mSELECT * FROM "buchungs" [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+Completed in 43ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/buchungs/]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 21:07:19) [GET]
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+Completed in 48ms (View: 33, DB: 0) | 200 OK [http://0.0.0.0/buchungs/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-16 21:07:52) [GET]
+
+ActionController::RoutingError (No route matches "/benutzers" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:08:01) [GET]
+  [4;35;1mMitarbeiter Load (1.0ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 38ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 21:08:04) [GET]
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/new
+Completed in 30ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]

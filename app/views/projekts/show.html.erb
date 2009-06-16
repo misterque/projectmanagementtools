@@ -1,0 +1,33 @@
+<p>
+  <b>Mitarbeiter:</b>
+  <%=h @projekt.mitarbeiter %>
+</p>
+
+<p>
+  <b>Buchung:</b>
+  <%=h @projekt.buchung %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @projekt.name %>
+</p>
+
+<p>
+  <b>Fertigstellungsgrad:</b>
+  <%=h @projekt.fertigstellungsgrad %>
+</p>
+
+<p>
+  <b>Einstufungsgrad:</b>
+  <%=h @projekt.einstufungsgrad %>
+</p>
+
+<p>
+  <b>Budget:</b>
+  <%=h @projekt.budget %>
+</p>
+
+
+<%= link_to 'Edit', edit_projekt_path(@projekt) %> |
+<%= link_to 'Back', projekts_path %>

@@ -1,0 +1,44 @@
+<h1>Editing buchung</h1>
+
+<% form_for(@buchung) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :mitarbeiter %><br />
+    <%= f.text_field :mitarbeiter %>
+  </p>
+  <p>
+    <%= f.label :projekt %><br />
+    <%= f.text_field :projekt %>
+  </p>
+  <p>
+    <%= f.label :woche %><br />
+    <%= f.text_field :woche %>
+  </p>
+  <p>
+    <%= f.label :jahr %><br />
+    <%= f.text_field :jahr %>
+  </p>
+  <p>
+    <%= f.label :geleistet %><br />
+    <%= f.text_field :geleistet %>
+  </p>
+  <p>
+    <%= f.label :gebucht %><br />
+    <%= f.text_field :gebucht %>
+  </p>
+  <p>
+    <%= f.label :beschreibung %><br />
+    <%= f.text_area :beschreibung %>
+  </p>
+  <p>
+    <%= f.label :bestaetigung %><br />
+    <%= f.text_area :bestaetigung %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @buchung %> |
+<%= link_to 'Back', buchungs_path %>

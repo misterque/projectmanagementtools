@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  wochenstunden: 1.5
+  buchung: 
+  projekt: 
+
+two:
+  name: MyString
+  wochenstunden: 1.5
+  buchung: 
+  projekt: 

@@ -1,0 +1,30 @@
+<h1>Listing projekts</h1>
+
+<table>
+  <tr>
+    <th>Mitarbeiter</th>
+    <th>Buchung</th>
+    <th>Name</th>
+    <th>Fertigstellungsgrad</th>
+    <th>Einstufungsgrad</th>
+    <th>Budget</th>
+  </tr>
+
+<% @projekts.each do |projekt| %>
+  <tr>
+    <td><%=h projekt.mitarbeiter %></td>
+    <td><%=h projekt.buchung %></td>
+    <td><%=h projekt.name %></td>
+    <td><%=h projekt.fertigstellungsgrad %></td>
+    <td><%=h projekt.einstufungsgrad %></td>
+    <td><%=h projekt.budget %></td>
+    <td><%= link_to 'Show', projekt %></td>
+    <td><%= link_to 'Edit', edit_projekt_path(projekt) %></td>
+    <td><%= link_to 'Destroy', projekt, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New projekt', new_projekt_path %>

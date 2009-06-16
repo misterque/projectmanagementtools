@@ -1,0 +1,43 @@
+<p>
+  <b>Mitarbeiter:</b>
+  <%=h @buchung.mitarbeiter %>
+</p>
+
+<p>
+  <b>Projekt:</b>
+  <%=h @buchung.projekt %>
+</p>
+
+<p>
+  <b>Woche:</b>
+  <%=h @buchung.woche %>
+</p>
+
+<p>
+  <b>Jahr:</b>
+  <%=h @buchung.jahr %>
+</p>
+
+<p>
+  <b>Geleistet:</b>
+  <%=h @buchung.geleistet %>
+</p>
+
+<p>
+  <b>Gebucht:</b>
+  <%=h @buchung.gebucht %>
+</p>
+
+<p>
+  <b>Beschreibung:</b>
+  <%=h @buchung.beschreibung %>
+</p>
+
+<p>
+  <b>Bestaetigung:</b>
+  <%=h @buchung.bestaetigung %>
+</p>
+
+
+<%= link_to 'Edit', edit_buchung_path(@buchung) %> |
+<%= link_to 'Back', buchungs_path %>

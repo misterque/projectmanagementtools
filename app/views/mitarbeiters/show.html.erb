@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @mitarbeiter.name %>
+</p>
+
+<p>
+  <b>Wochenstunden:</b>
+  <%=h @mitarbeiter.wochenstunden %>
+</p>
+
+<p>
+  <b>Buchung:</b>
+  <%=h @mitarbeiter.buchung %>
+</p>
+
+<p>
+  <b>Projekt:</b>
+  <%=h @mitarbeiter.projekt %>
+</p>
+
+
+<%= link_to 'Edit', edit_mitarbeiter_path(@mitarbeiter) %> |
+<%= link_to 'Back', mitarbeiters_path %>

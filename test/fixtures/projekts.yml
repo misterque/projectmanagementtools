@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mitarbeiter: 
+  buchung: 
+  name: MyString
+  fertigstellungsgrad: 1
+  einstufungsgrad: 1
+  budget: 1.5
+
+two:
+  mitarbeiter: 
+  buchung: 
+  name: MyString
+  fertigstellungsgrad: 1
+  einstufungsgrad: 1
+  budget: 1.5
