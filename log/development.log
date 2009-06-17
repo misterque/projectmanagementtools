@@ -140,3 +140,2012 @@ Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 21:08:04) [GE
 Rendering template within layouts/mitarbeiters
 Rendering mitarbeiters/new
 Completed in 30ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:13:41) [GET]
+  [4;36;1mMitarbeiter Load (1.1ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 54ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters/]
+
+
+Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 21:13:45) [GET]
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/new
+Completed in 67ms (View: 53, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]
+
+
+Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 21:14:17) [GET]
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/new
+Completed in 28ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]
+
+
+Processing MitarbeitersController#create (for 127.0.0.1 at 2009-06-16 21:14:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "mitarbeiter"=>{"name"=>"Hannes", "wochenstunden"=>"40"}}
+  [4;35;1mMitarbeiter Create (1.0ms)[0m   [0mINSERT INTO "mitarbeiters" ("name", "updated_at", "wochenstunden", "buchung_id", "projekt_id", "created_at") VALUES('Hannes', '2009-06-16 19:14:25', 40.0, NULL, NULL, '2009-06-16 19:14:25')[0m
+Redirected to http://0.0.0.0:3000/mitarbeiters/1
+Completed in 24ms (DB: 1) | 302 Found [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:14:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+
+ActionView::TemplateError (undefined method `buchungs' for #<Mitarbeiter:0x24309c0>) on line #13 of app/views/mitarbeiters/show.html.erb:
+10: 
+11: <p>
+12:   <b>Buchung:</b>
+13:   <%=h @mitarbeiter.buchungs %>
+14: </p>
+15: 
+16: <p>
+
+    app/views/mitarbeiters/show.html.erb:13
+    app/controllers/mitarbeiters_controller.rb:18:in `show'
+
+Rendered rescues/_trace (265.5ms)
+Rendered rescues/_request_and_response (3.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:16:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMitarbeiter Load (0.6ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;35;1mProjekt Load (0.5ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 37ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters/1]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:17:00) [GET]
+  [4;36;1mMitarbeiter Load (1.3ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+
+ActionView::TemplateError (undefined method `buchung' for #<Mitarbeiter:0x24bca10>) on line #15 of app/views/mitarbeiters/index.html.erb:
+12:   <tr>
+13:     <td><%=h mitarbeiter.name %></td>
+14:     <td><%=h mitarbeiter.wochenstunden %></td>
+15:     <td><%=h mitarbeiter.buchung %></td>
+16:     <td><%=h mitarbeiter.projekt %></td>
+17:     <td><%= link_to 'Show', mitarbeiter %></td>
+18:     <td><%= link_to 'Edit', edit_mitarbeiter_path(mitarbeiter) %></td>
+
+    app/views/mitarbeiters/index.html.erb:15
+    app/views/mitarbeiters/index.html.erb:11:in `each'
+    app/views/mitarbeiters/index.html.erb:11
+    app/controllers/mitarbeiters_controller.rb:7:in `index'
+
+Rendered rescues/_trace (127.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:17:43) [GET]
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;35;1mProjekt Load (0.4ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 47ms (View: 33, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-16 21:18:09) [GET]
+
+ActionController::RoutingError (No route matches "/projects" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:18:15) [GET]
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+Completed in 38ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:18:17) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+
+ActionView::TemplateError (undefined method `buchung' for #<Projekt:0x24acf98>) on line #12 of app/views/projekts/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :buchung %><br />
+12:     <%= f.text_field :buchung %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :name %><br />
+
+    app/views/projekts/new.html.erb:12
+    app/views/projekts/new.html.erb:3
+    app/controllers/projekts_controller.rb:29:in `new'
+
+Rendered rescues/_trace (139.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:20:35) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+Completed in 33ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:28:14) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 49ms (View: 33, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:29:05) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 46ms (View: 31, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#create (for 127.0.0.1 at 2009-06-16 21:29:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt"=>{"name"=>"Testprojekt", "fertigstellungsgrad"=>"0", "einstufungsgrad"=>"0", "budget"=>"1000"}, "mitarbeiter"=>{"mitarbeiter_id"=>"1"}}
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 49ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:30:31) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 46ms (View: 31, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:30:33) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 37ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:30:35) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 39ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:30:36) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 39ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#create (for 127.0.0.1 at 2009-06-16 21:30:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt"=>{"name"=>"Testprojekt", "mitarbeiter_id"=>"1", "fertigstellungsgrad"=>"0", "einstufungsgrad"=>"0", "budget"=>"1000"}}
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 47ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#create (for 127.0.0.1 at 2009-06-16 21:31:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt"=>{"name"=>"Testprojekt", "mitarbeiter_id"=>"1", "fertigstellungsgrad"=>"0", "einstufungsgrad"=>"0", "budget"=>"1000"}}
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+
+ActionView::TemplateError (undefined method `merge' for [["Hannes", 1]]:Array) on line #9 of app/views/projekts/new.html.erb:
+6:   <p>
+7:     <%= f.label :mitarbeiter %><br />
+8: 
+9: 	<%= f.select("projekt", "mitarbeiter_id", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) %>
+10:   </p>
+11:   <p>
+12:     <%= f.label :name %><br />
+
+    app/views/projekts/new.html.erb:9
+    app/views/projekts/new.html.erb:3
+    app/controllers/projekts_controller.rb:51:in `create'
+    app/controllers/projekts_controller.rb:45:in `create'
+
+Rendered rescues/_trace (128.1ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:31:19) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+
+ActionView::TemplateError (undefined method `merge' for [["Hannes", 1]]:Array) on line #9 of app/views/projekts/new.html.erb:
+6:   <p>
+7:     <%= f.label :mitarbeiter %><br />
+8: 
+9: 	<%= f.select("projekt", "mitarbeiter_id", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) %>
+10:   </p>
+11:   <p>
+12:     <%= f.label :name %><br />
+
+    app/views/projekts/new.html.erb:9
+    app/views/projekts/new.html.erb:3
+    app/controllers/projekts_controller.rb:29:in `new'
+
+Rendered rescues/_trace (125.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 21:32:49) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 47ms (View: 32, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#create (for 127.0.0.1 at 2009-06-16 21:33:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt"=>{"name"=>"Testprojekt", "mitarbeiter_id"=>"1", "fertigstellungsgrad"=>"0", "einstufungsgrad"=>"0", "budget"=>"1000"}}
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mProjekt Create (0.8ms)[0m   [0mINSERT INTO "projekts" ("mitarbeiter_id", "name", "updated_at", "fertigstellungsgrad", "einstufungsgrad", "buchung_id", "budget", "created_at") VALUES(1, 'Testprojekt', '2009-06-16 19:33:03', 0, 0, NULL, 1000.0, '2009-06-16 19:33:03')[0m
+Redirected to http://0.0.0.0:3000/projekts/1
+Completed in 53ms (DB: 1) | 302 Found [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 21:33:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (1.3ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.5ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 203ms (View: 181, DB: 3) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:33:18) [GET]
+  [4;35;1mProjekt Load (1.4ms)[0m   [0mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.5ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 56ms (View: 39, DB: 3) | 200 OK [http://0.0.0.0/projekts/]
+
+
+Processing ProjektsController#edit (for 127.0.0.1 at 2009-06-16 21:34:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (1.0ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/edit
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 46ms (View: 28, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/edit]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:38:29) [GET]
+  [4;36;1mProjekt Load (1.4ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 47ms (View: 33, DB: 2) | 200 OK [http://0.0.0.0/projekts/]
+
+
+Processing ProjektsController#edit (for 127.0.0.1 at 2009-06-16 21:38:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/edit
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Rendered projekts/_form (26.0ms)
+Completed in 54ms (View: 39, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/edit]
+
+
+Processing ProjektsController#update (for 127.0.0.1 at 2009-06-16 21:39:03) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "id"=>"1", "projekt"=>{"name"=>"Testprojekt2", "mitarbeiter_id"=>"1", "fertigstellungsgrad"=>"0", "einstufungsgrad"=>"0", "budget"=>"1000.0"}}
+  [4;35;1mProjekt Load (0.9ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+  [4;36;1mMitarbeiter Load (1.0ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mProjekt Update (0.7ms)[0m   [0mUPDATE "projekts" SET "name" = 'Testprojekt2', "updated_at" = '2009-06-16 19:39:03' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/projekts/1
+Completed in 48ms (DB: 3) | 302 Found [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 21:39:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 41ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:39:08) [GET]
+  [4;35;1mProjekt Load (1.4ms)[0m   [0mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 44ms (View: 30, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:41:25) [GET]
+  [4;36;1mProjekt Load (1.3ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 41ms (View: 28, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:41:40) [GET]
+  [4;36;1mProjekt Load (1.5ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 48ms (View: 33, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:42:26) [GET]
+  [4;36;1mProjekt Load (1.6ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 43ms (View: 30, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 21:42:59) [GET]
+  [4;36;1mProjekt Load (1.4ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 44ms (View: 30, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:43:45) [GET]
+  [4;36;1mMitarbeiter Load (6.1ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 56ms (View: 36, DB: 7) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:45:15) [GET]
+  [4;35;1mMitarbeiter Load (1.3ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 174ms (View: 162, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:45:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMitarbeiter Load (0.6ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 43ms (View: 27, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters/1]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:49:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;35;1mProjekt Load (0.8ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 50ms (View: 34, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters/1]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:50:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMitarbeiter Load (0.6ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 51ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters/1]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:50:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".mitarbeiter_id = 1) [0m
+  [4;35;1mProjekt Load (0.8ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 1) [0m
+Completed in 51ms (View: 34, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters/1]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:52:37) [GET]
+  [4;36;1mMitarbeiter Load (1.3ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:52:37) [GET]
+  [4;35;1mMitarbeiter Load (1.3ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 21:52:39) [GET]
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/new
+Rendered mitarbeiters/_form (8.3ms)
+Completed in 191ms (View: 178, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]
+
+
+Processing MitarbeitersController#create (for 127.0.0.1 at 2009-06-16 21:52:46) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "mitarbeiter"=>{"name"=>"James", "wochenstunden"=>"160"}}
+  [4;36;1mMitarbeiter Create (0.8ms)[0m   [0;1mINSERT INTO "mitarbeiters" ("name", "updated_at", "wochenstunden", "buchung_id", "projekt_id", "created_at") VALUES('James', '2009-06-16 19:52:46', 160.0, NULL, NULL, '2009-06-16 19:52:46')[0m
+Redirected to http://0.0.0.0:3000/mitarbeiters/2
+Completed in 24ms (DB: 1) | 302 Found [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 21:52:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMitarbeiter Load (1.1ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 2) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;36;1mProjekt Load (0.4ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 2) [0m
+Completed in 42ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters/2]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:53:02) [GET]
+  [4;35;1mMitarbeiter Load (1.5ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 26ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#edit (for 127.0.0.1 at 2009-06-16 21:53:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMitarbeiter Load (0.6ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/edit
+Rendered mitarbeiters/_form (6.0ms)
+Completed in 30ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters/1/edit]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 21:53:07) [GET]
+  [4;35;1mMitarbeiter Load (1.5ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 21:54:14) [GET]
+  [4;36;1mBuchung Load (0.9ms)[0m   [0;1mSELECT * FROM "buchungs" [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+Completed in 41ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/buchungs]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 22:04:08) [GET]
+  [4;35;1mProjekt Load (1.4ms)[0m   [0mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 175ms (View: 159, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:04:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 49ms (View: 32, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 22:04:27) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mBuchung Load (0.9ms)[0m   [0;1mSELECT * FROM "buchungs" [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #1 of app/views/buchungs/index.html.erb:
+1: <h1>Listing buchungs for<%= @projekt.name%></h1>
+2: 
+3: <table>
+4:   <tr>
+
+    app/views/buchungs/index.html.erb:1
+    app/controllers/buchungs_controller.rb:7:in `index'
+
+Rendered rescues/_trace (115.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 22:08:52) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `new_buchung_path' for #<ActionView::Base:0x2320d14>) on line #34 of app/views/buchungs/index.html.erb:
+31: 
+32: <br />
+33: 
+34: <%= link_to 'New buchung', new_buchung_path %>
+
+    app/views/buchungs/index.html.erb:34
+    app/controllers/buchungs_controller.rb:8:in `index'
+
+Rendered rescues/_trace (113.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:10:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.8ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+
+ActionView::TemplateError (undefined method `projekt_buchungs_new_path' for #<ActionView::Base:0x2444aec>) on line #32 of app/views/projekts/show.html.erb:
+29: </p>
+30: 
+31: 
+32: <%= link_to 'Mitarbeiter buchen', projekt_buchungs_new_path(@projekt)%>
+33: 
+34: 
+35: <%= link_to 'Edit', edit_projekt_path(@projekt) %> |
+
+    app/views/projekts/show.html.erb:32
+    app/controllers/projekts_controller.rb:18:in `show'
+
+Rendered rescues/_trace (267.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:10:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+
+ActionView::TemplateError (undefined method `new_projekt_buchungs_path' for #<ActionView::Base:0x250e2e8>) on line #32 of app/views/projekts/show.html.erb:
+29: </p>
+30: 
+31: 
+32: <%= link_to 'Mitarbeiter buchen', new_projekt_buchungs_path(@projekt)%>
+33: 
+34: 
+35: <%= link_to 'Edit', edit_projekt_path(@projekt) %> |
+
+    app/views/projekts/show.html.erb:32
+    app/controllers/projekts_controller.rb:18:in `show'
+
+Rendered rescues/_trace (115.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:11:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 52ms (View: 31, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 22:11:57) [POST]
+  Parameters: {"authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt_id"=>"1"}
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x256c3d4>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>New buchung</h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:52:in `create'
+    app/controllers/buchungs_controller.rb:46:in `create'
+
+Rendered rescues/_trace (125.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 22:12:17) [GET]
+  [4;36;1mProjekt Load (1.4ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 36ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 22:12:27) [POST]
+  Parameters: {"authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt_id"=>"1"}
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x233ec24>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>New buchung</h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:52:in `create'
+    app/controllers/buchungs_controller.rb:46:in `create'
+
+Rendered rescues/_trace (128.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 22:12:38) [POST]
+  Parameters: {"authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt_id"=>"1"}
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2434bec>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>New buchung</h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:52:in `create'
+    app/controllers/buchungs_controller.rb:46:in `create'
+
+Rendered rescues/_trace (280.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:13:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.5ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 49ms (View: 32, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:13:21) [GET]
+  Parameters: {"projekt_id"=>"1"}
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2497abc>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>New buchung</h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:30:in `new'
+
+Rendered rescues/_trace (132.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:33:18) [GET]
+  Parameters: {"projekt_id"=>"1"}
+
+NameError (undefined local variable or method `buchung' for #<BuchungsController:0x22be6c8>):
+  app/controllers/buchungs_controller.rb:29:in `new'
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:33:40) [GET]
+  Parameters: {"projekt_id"=>"1"}
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #1 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/buchungs/new.html.erb:1
+    app/controllers/buchungs_controller.rb:31:in `new'
+
+Rendered rescues/_trace (115.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:34:39) [GET]
+  Parameters: {"projekt_id"=>"1"}
+
+ActiveRecord::RecordNotFound (Couldn't find Projekt without an ID):
+  app/controllers/buchungs_controller.rb:28:in `new'
+
+Rendered rescues/_trace (89.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:35:23) [GET]
+  Parameters: {"projekt_id"=>"1"}
+
+ActiveRecord::RecordNotFound (Couldn't find Projekt without an ID):
+  app/controllers/buchungs_controller.rb:28:in `new'
+
+Rendered rescues/_trace (88.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:35:25) [GET]
+  Parameters: {"projekt_id"=>"1"}
+
+ActiveRecord::RecordNotFound (Couldn't find Projekt without an ID):
+  app/controllers/buchungs_controller.rb:28:in `new'
+
+Rendered rescues/_trace (235.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:35:38) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2525100>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (121.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:37:04) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2359060>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (121.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:37:06) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2430d58>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (269.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:38:01) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2510304>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (123.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:38:03) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.8ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x23287d0>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (122.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:39:00) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+ERROR: compiling _run_erb_app47views47buchungs47new46html46erb RAISED compile error
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:35: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:38: syntax error, unexpected kENSURE, expecting ')'
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:40: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47buchungs47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Neue Buchung f\303\274r Projekt "; @output_buffer.concat(( @projekt.name ).to_s); @output_buffer.concat "</h1>\n"
+@output_buffer.concat "\n"
+ form_for(@buchung) do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :mitarbeiter ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\t"; @output_buffer.concat(( #select("buchung", "mitarbeiter_id", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :woche ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :woche ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :jahr ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :jahr ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :geleistet ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :geleistet ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :gebucht ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :gebucht ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :beschreibung ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_area :beschreibung ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.submit 'Speichern' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'Abbruch', project(@projekt) ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:40:in `compile!'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/misterque/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/misterque/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/misterque/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/controllers/buchungs_controller.rb:32:in `new'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/misterque/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/misterque/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/misterque/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Users/misterque/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/misterque/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Users/misterque/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Users/misterque/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Users/misterque/.gem/ruby/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:35: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:38: syntax error, unexpected kENSURE, expecting ')'
+/Users/misterque/Desktop/Studium/Semester 6/Requirements Engineering und Projektleitung (8)/aufgaben/Aufgabe 8/prototyp/app/views/buchungs/new.html.erb:40: syntax error, unexpected kEND, expecting ')') on line #35 of app/views/buchungs/new.html.erb:
+32:   <p>
+33:     <%= f.submit 'Speichern' %>
+34:   </p>
+35: <% end %>
+36: 
+37: <%= link_to 'Abbruch', project(@projekt) %>
+
+    app/views/buchungs/new.html.erb:40:in `compile!'
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (267.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:39:09) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x25447bc>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (121.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:40:01) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x237b2c8>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (125.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:40:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 40ms (View: 24, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:40:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 40ms (View: 24, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:40:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.5ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 39ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:40:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 187ms (View: 170, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:40:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.5ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 52ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:41:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.5ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 55ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:41:28) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x244c2d8>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (276.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:42:01) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+Completed in 38ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:42:15) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x24d5a4c>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (121.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:42:35) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x22d0fe4>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4: 
+5: <% end %>
+6: 
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (120.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:42:37) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x23e9ac0>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4: 
+5: <% end %>
+6: 
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (267.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:42:46) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `project' for #<ActionView::Base:0x24c4238>) on line #5 of app/views/buchungs/new.html.erb:
+2: 
+3: 
+4: 
+5: <%= link_to 'Abbruch', project(@projekt) %>
+
+    app/views/buchungs/new.html.erb:5
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (114.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:42:50) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `project' for #<ActionView::Base:0x22dd028>) on line #5 of app/views/buchungs/new.html.erb:
+2: 
+3: 
+4: 
+5: <%= link_to 'Abbruch', project(@projekt) %>
+
+    app/views/buchungs/new.html.erb:5
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (113.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:43:39) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2402aac>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (270.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:44:08) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (1.0ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x24d3328>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (122.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:44:10) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x22cce1c>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (120.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:44:25) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.8ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+
+ActionView::TemplateError (undefined method `woche' for #<Projekt:0x23d69ac>) on line #14 of app/views/buchungs/new.html.erb:
+11: 
+12:   <p>
+13:     <%= f.label :woche %><br />
+14:     <%= f.text_field :woche %>
+15:   </p>
+16:   <p>
+17:     <%= f.label :jahr %><br />
+
+    app/views/buchungs/new.html.erb:14
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (274.3ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:45:12) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (undefined method `buchungs_path' for #<ActionView::Base:0x2495e9c>) on line #3 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (122.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:46:07) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.1ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+
+ActionView::TemplateError (undefined method `projekt' for #<ActionView::Base:0x2491ef0>) on line #37 of app/views/buchungs/new.html.erb:
+34:   </p>
+35: <% end %>
+36: 
+37: <%= link_to 'Abbruch', projekt(@projekt) %>
+
+    app/views/buchungs/new.html.erb:37
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (114.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:46:35) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.1ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 197ms (View: 37, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing ProjektsController#index to #<projekt:0x22d3320> (for 127.0.0.1 at 2009-06-16 22:47:04) [GET]
+  [4;36;1mProjekt Load (1.5ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Completed in 18ms (View: 2, DB: 2) | 406 Not Acceptable [http://0.0.0.0/projekts.%23%3Cprojekt:0x22d3320%3E]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:48:11) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.0ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 63ms (View: 37, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:48:27) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.0ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 63ms (View: 36, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:49:21) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.0ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+
+ActionView::TemplateError (projekt_url failed to generate from {:action=>"show", :controller=>"projekts"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["projekts", :id] - are they all satisfied?) on line #37 of app/views/buchungs/new.html.erb:
+34:   </p>
+35: <% end %>
+36: 
+37: <%= link_to 'Abbruch', projekt_path%>
+
+    (eval):16:in `projekt_path'
+    app/views/buchungs/new.html.erb:37
+    app/controllers/buchungs_controller.rb:32:in `new'
+
+Rendered rescues/_trace (271.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:49:44) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.1ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 63ms (View: 37, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:49:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 43ms (View: 26, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:49:52) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.0ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 53ms (View: 27, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 22:53:40) [GET]
+  [4;36;1mBuchung Load (1.2ms)[0m   [0;1mSELECT * FROM "buchungs" [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #1 of app/views/buchungs/index.html.erb:
+1: <h1>Listing buchungs for<%= @projekt.name%></h1>
+2: 
+3: <table>
+4:   <tr>
+
+    app/views/buchungs/index.html.erb:1
+    app/controllers/buchungs_controller.rb:7:in `index'
+
+Rendered rescues/_trace (114.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 22:54:19) [GET]
+  [4;35;1mBuchung Load (0.9ms)[0m   [0mSELECT * FROM "buchungs" [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/buchungs]
+
+
+Processing BuchungsController#index (for 127.0.0.1 at 2009-06-16 22:54:32) [GET]
+  [4;36;1mBuchung Load (0.9ms)[0m   [0;1mSELECT * FROM "buchungs" [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/index
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/buchungs]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 22:54:37) [GET]
+  [4;35;1mMitarbeiter Load (1.6ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 30ms (View: 11, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 22:54:42) [GET]
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/new
+Rendered mitarbeiters/_form (5.5ms)
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]
+
+
+Processing MitarbeitersController#create (for 127.0.0.1 at 2009-06-16 22:55:02) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "mitarbeiter"=>{"name"=>"Malte", "wochenstunden"=>"20"}}
+  [4;36;1mMitarbeiter Create (0.9ms)[0m   [0;1mINSERT INTO "mitarbeiters" ("name", "updated_at", "wochenstunden", "buchung_id", "projekt_id", "created_at") VALUES('Malte', '2009-06-16 20:55:02', 20.0, NULL, NULL, '2009-06-16 20:55:02')[0m
+Redirected to http://0.0.0.0:3000/mitarbeiters/3
+Completed in 612ms (DB: 1) | 302 Found [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 22:55:02) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;36;1mProjekt Load (0.4ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 3) [0m
+Completed in 178ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters/3]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 22:55:05) [GET]
+  [4;35;1mMitarbeiter Load (1.8ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 26ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#new (for 127.0.0.1 at 2009-06-16 22:55:09) [GET]
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/new
+Rendered mitarbeiters/_form (5.3ms)
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/mitarbeiters/new]
+
+
+Processing MitarbeitersController#create (for 127.0.0.1 at 2009-06-16 22:55:19) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "mitarbeiter"=>{"name"=>"Heinz", "wochenstunden"=>"5"}}
+  [4;36;1mMitarbeiter Create (0.8ms)[0m   [0;1mINSERT INTO "mitarbeiters" ("name", "updated_at", "wochenstunden", "buchung_id", "projekt_id", "created_at") VALUES('Heinz', '2009-06-16 20:55:19', 5.0, NULL, NULL, '2009-06-16 20:55:19')[0m
+Redirected to http://0.0.0.0:3000/mitarbeiters/4
+Completed in 23ms (DB: 1) | 302 Found [http://0.0.0.0/mitarbeiters]
+
+
+Processing MitarbeitersController#show (for 127.0.0.1 at 2009-06-16 22:55:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMitarbeiter Load (0.6ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 4) [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/show
+  [4;36;1mProjekt Load (0.4ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts".mitarbeiter_id = 4) [0m
+Completed in 33ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/mitarbeiters/4]
+
+
+Processing MitarbeitersController#index (for 127.0.0.1 at 2009-06-16 22:55:20) [GET]
+  [4;35;1mMitarbeiter Load (2.1ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendering template within layouts/mitarbeiters
+Rendering mitarbeiters/index
+Completed in 27ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/mitarbeiters]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 22:55:26) [GET]
+  [4;36;1mProjekt Load (1.4ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Completed in 42ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-16 22:56:15) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;36;1mMitarbeiter Load (1.5ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Rendered projekts/_form (26.8ms)
+Completed in 464ms (View: 447, DB: 1) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#create (for 127.0.0.1 at 2009-06-16 22:56:30) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "projekt"=>{"name"=>"Testprojekt1", "mitarbeiter_id"=>"3", "fertigstellungsgrad"=>"50", "einstufungsgrad"=>"9", "budget"=>"2000"}}
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+  [4;36;1mProjekt Create (0.8ms)[0m   [0;1mINSERT INTO "projekts" ("mitarbeiter_id", "name", "updated_at", "fertigstellungsgrad", "einstufungsgrad", "buchung_id", "budget", "created_at") VALUES(3, 'Testprojekt1', '2009-06-16 20:56:30', 50, 9, NULL, 2000.0, '2009-06-16 20:56:30')[0m
+Redirected to http://0.0.0.0:3000/projekts/2
+Completed in 181ms (DB: 1) | 302 Found [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 22:56:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProjekt Load (0.9ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 2) [0m
+Completed in 47ms (View: 28, DB: 2) | 200 OK [http://0.0.0.0/projekts/2]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 22:56:36) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 62ms (View: 34, DB: 2) | 200 OK [http://0.0.0.0/projekts/2/buchungs/new]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 23:17:02) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 61ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/projekts/2/buchungs/new]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 23:18:40) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "buchung"=>{"mitarbeiter_id"=>"2", "jahr"=>"2009", "woche"=>"30", "beschreibung"=>"James kann nichts! Soll aber trotzdem arbeiten!", "gebucht"=>"10"}}
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #1 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/buchungs/new.html.erb:1
+    app/controllers/buchungs_controller.rb:53:in `create'
+    app/controllers/buchungs_controller.rb:47:in `create'
+
+Rendered rescues/_trace (274.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 23:25:30) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "buchung"=>{"mitarbeiter_id"=>"2", "jahr"=>"2009", "woche"=>"30", "beschreibung"=>"James kann nichts! Soll aber trotzdem arbeiten!", "gebucht"=>"10"}}
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #1 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/buchungs/new.html.erb:1
+    app/controllers/buchungs_controller.rb:54:in `create'
+    app/controllers/buchungs_controller.rb:48:in `create'
+
+Rendered rescues/_trace (115.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 23:25:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+  [4;36;1mBuchung Load (0.4ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 2) [0m
+Completed in 42ms (View: 26, DB: 2) | 200 OK [http://0.0.0.0/projekts/2]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 23:25:56) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;35;1mProjekt Load (0.9ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.6ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 56ms (View: 27, DB: 2) | 200 OK [http://0.0.0.0/projekts/2/buchungs/new]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 23:26:06) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "buchung"=>{"mitarbeiter_id"=>"1", "jahr"=>"2009", "woche"=>"2", "beschreibung"=>"adfasf", "gebucht"=>"20"}}
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #1 of app/views/buchungs/new.html.erb:
+1: <h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
+2: 
+3: <% form_for(@buchung) do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/buchungs/new.html.erb:1
+    app/controllers/buchungs_controller.rb:54:in `create'
+    app/controllers/buchungs_controller.rb:48:in `create'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 23:27:45) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+
+ActionView::TemplateError (undefined method `hidden' for #<ActionView::Helpers::FormBuilder:0x22a7b1c>) on line #12 of app/views/buchungs/new.html.erb:
+9: 	<%= select("buchung", "mitarbeiter_id", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) %>
+10:   </p>
+11: 
+12: 	<%= f.hidden :projekt %>
+13:   <p>
+14:     <%= f.label :woche %><br />
+15:     <%= f.text_field :woche %>
+
+    app/views/buchungs/new.html.erb:12
+    app/views/buchungs/new.html.erb:3
+    app/controllers/buchungs_controller.rb:31:in `new'
+
+Rendered rescues/_trace (118.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 23:28:30) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 62ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/projekts/2/buchungs/new]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 23:28:43) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "buchung"=>{"mitarbeiter_id"=>"1", "jahr"=>"1999", "woche"=>"3", "beschreibung"=>"Tatatataaaa", "projekt"=>"#<Projekt:0x238f890>", "gebucht"=>"40"}}
+
+ActiveRecord::AssociationTypeMismatch (Projekt(#18343550) expected, got String(#113650)):
+  app/controllers/buchungs_controller.rb:45:in `new'
+  app/controllers/buchungs_controller.rb:45:in `create'
+
+Rendered rescues/_trace (250.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 23:29:57) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 62ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/projekts/2/buchungs/new]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-16 23:30:02) [GET]
+  Parameters: {"projekt_id"=>"2"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 56ms (View: 29, DB: 2) | 200 OK [http://0.0.0.0/projekts/2/buchungs/new]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-16 23:30:11) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"MECNP/GVTyEpr0Ddci+gheqfccGiTKW7teCcp/9y59Y=", "buchung"=>{"mitarbeiter_id"=>"1", "jahr"=>"2009", "woche"=>"34", "beschreibung"=>"afasdfdsf", "gebucht"=>"34", "projekt_id"=>"2"}}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Create (0.8ms)[0m   [0;1mINSERT INTO "buchungs" ("mitarbeiter_id", "woche", "jahr", "updated_at", "geleistet", "beschreibung", "gebucht", "bestaetigung", "projekt_id", "created_at") VALUES(1, 34, 2009, '2009-06-16 21:30:11', NULL, 'afasdfdsf', 34.0, NULL, 2, '2009-06-16 21:30:11')[0m
+Redirected to http://0.0.0.0:3000/buchungs/1
+Completed in 68ms (DB: 2) | 302 Found [http://0.0.0.0/buchungs]
+
+
+Processing BuchungsController#show (for 127.0.0.1 at 2009-06-16 23:30:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBuchung Load (0.8ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mProjekt Load (0.9ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Completed in 59ms (View: 39, DB: 2) | 200 OK [http://0.0.0.0/buchungs/1]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-16 23:30:25) [GET]
+  [4;36;1mProjekt Load (5.1ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+Completed in 193ms (View: 174, DB: 7) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 23:30:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.5ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 43ms (View: 26, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-16 23:30:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 2) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+  [4;36;1mBuchung Load (0.9ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 2) [0m
+Completed in 50ms (View: 33, DB: 2) | 200 OK [http://0.0.0.0/projekts/2]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-17 08:36:51) [GET]
+  [4;36;1mProjekt Load (2.8ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+Completed in 220ms (View: 145, DB: 4) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#new (for 127.0.0.1 at 2009-06-17 08:37:08) [GET]
+Rendering template within layouts/projekts
+Rendering projekts/new
+  [4;35;1mMitarbeiter Load (1.5ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Rendered projekts/_form (27.9ms)
+Completed in 674ms (View: 658, DB: 2) | 200 OK [http://0.0.0.0/projekts/new]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-17 08:37:34) [GET]
+  [4;36;1mProjekt Load (1.6ms)[0m   [0;1mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+Completed in 40ms (View: 26, DB: 3) | 200 OK [http://0.0.0.0/projekts]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-17 08:38:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (0.4ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 674ms (View: 656, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-17 08:38:49) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.5ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 823ms (View: 659, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-17 08:38:54) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;35;1mMitarbeiter Load (1.4ms)[0m   [0mSELECT * FROM "mitarbeiters" [0m
+Completed in 53ms (View: 26, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-17 08:39:43) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"YuZlkbdIJvHwLGBfa+TbVOStNGynZJ4XUfX+ew3Nba8=", "buchung"=>{"mitarbeiter_id"=>"3", "jahr"=>"2009", "woche"=>"45", "beschreibung"=>"blublublaaaaa", "gebucht"=>"10", "projekt_id"=>"1"}}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+  [4;36;1mBuchung Create (0.9ms)[0m   [0;1mINSERT INTO "buchungs" ("mitarbeiter_id", "woche", "jahr", "updated_at", "geleistet", "beschreibung", "gebucht", "bestaetigung", "projekt_id", "created_at") VALUES(3, 45, 2009, '2009-06-17 06:39:43', NULL, 'blublublaaaaa', 10.0, NULL, 1, '2009-06-17 06:39:43')[0m
+Redirected to http://0.0.0.0:3000/buchungs/2
+Completed in 59ms (DB: 2) | 302 Found [http://0.0.0.0/buchungs]
+
+
+Processing BuchungsController#show (for 127.0.0.1 at 2009-06-17 08:39:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mBuchung Load (0.9ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs"."id" = 2) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Completed in 56ms (View: 35, DB: 2) | 200 OK [http://0.0.0.0/buchungs/2]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-17 08:40:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (0.9ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 49ms (View: 32, DB: 2) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing BuchungsController#new (for 127.0.0.1 at 2009-06-17 08:40:32) [GET]
+  Parameters: {"projekt_id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/new
+  [4;36;1mMitarbeiter Load (1.4ms)[0m   [0;1mSELECT * FROM "mitarbeiters" [0m
+Completed in 197ms (View: 169, DB: 2) | 200 OK [http://0.0.0.0/projekts/1/buchungs/new]
+
+
+Processing BuchungsController#create (for 127.0.0.1 at 2009-06-17 08:40:52) [POST]
+  Parameters: {"commit"=>"Speichern", "authenticity_token"=>"YuZlkbdIJvHwLGBfa+TbVOStNGynZJ4XUfX+ew3Nba8=", "buchung"=>{"mitarbeiter_id"=>"4", "jahr"=>"2009", "woche"=>"40", "beschreibung"=>"hjgkjjhf", "gebucht"=>"30", "projekt_id"=>"1"}}
+  [4;35;1mProjekt Load (0.8ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 4) [0m
+  [4;35;1mBuchung Create (0.8ms)[0m   [0mINSERT INTO "buchungs" ("mitarbeiter_id", "woche", "jahr", "updated_at", "geleistet", "beschreibung", "gebucht", "bestaetigung", "projekt_id", "created_at") VALUES(4, 40, 2009, '2009-06-17 06:40:52', NULL, 'hjgkjjhf', 30.0, NULL, 1, '2009-06-17 06:40:52')[0m
+Redirected to http://0.0.0.0:3000/buchungs/3
+Completed in 79ms (DB: 2) | 302 Found [http://0.0.0.0/buchungs]
+
+
+Processing BuchungsController#show (for 127.0.0.1 at 2009-06-17 08:40:52) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBuchung Load (0.9ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs"."id" = 3) [0m
+Rendering template within layouts/buchungs
+Rendering buchungs/show
+  [4;35;1mMitarbeiter Load (0.8ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 4) [0m
+  [4;36;1mProjekt Load (0.9ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Completed in 50ms (View: 30, DB: 3) | 200 OK [http://0.0.0.0/buchungs/3]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-17 08:41:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.8ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (1.2ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 50ms (View: 33, DB: 3) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-17 08:41:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.7ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (1.2ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 50ms (View: 33, DB: 3) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-17 08:41:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProjekt Load (0.7ms)[0m   [0mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mBuchung Load (1.2ms)[0m   [0mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 49ms (View: 32, DB: 3) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#show (for 127.0.0.1 at 2009-06-17 08:41:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProjekt Load (0.8ms)[0m   [0;1mSELECT * FROM "projekts" WHERE ("projekts"."id" = 1) [0m
+Rendering template within layouts/projekts
+Rendering projekts/show
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;36;1mBuchung Load (1.2ms)[0m   [0;1mSELECT * FROM "buchungs" WHERE ("buchungs".projekt_id = 1) [0m
+Completed in 53ms (View: 32, DB: 3) | 200 OK [http://0.0.0.0/projekts/1]
+
+
+Processing ProjektsController#index (for 127.0.0.1 at 2009-06-17 08:42:07) [GET]
+  [4;35;1mProjekt Load (1.7ms)[0m   [0mSELECT * FROM "projekts" [0m
+Rendering template within layouts/projekts
+Rendering projekts/index
+  [4;36;1mMitarbeiter Load (0.7ms)[0m   [0;1mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 1) [0m
+  [4;35;1mMitarbeiter Load (0.7ms)[0m   [0mSELECT * FROM "mitarbeiters" WHERE ("mitarbeiters"."id" = 3) [0m
+Completed in 40ms (View: 25, DB: 3) | 200 OK [http://0.0.0.0/projekts/]

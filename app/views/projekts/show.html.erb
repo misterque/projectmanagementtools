@@ -1,11 +1,12 @@
+<h1>Projekt: <%= @projekt.name%></h1>
 <p>
-  <b>Mitarbeiter:</b>
-  <%=h @projekt.mitarbeiter %>
+  <b>Projektleiter:</b>
+  <%=h @projekt.mitarbeiter.name %>
 </p>
 
 <p>
-  <b>Buchung:</b>
-  <%=h @projekt.buchung %>
+  <b>Buchungen:</b>
+  <%=h @projekt.buchungs %>
 </p>
 
 <p>
@@ -27,6 +28,9 @@
   <b>Budget:</b>
   <%=h @projekt.budget %>
 </p>
+
+
+<%= link_to 'Mitarbeiter buchen', new_projekt_buchung_path(@projekt) %>
 
 
 <%= link_to 'Edit', edit_projekt_path(@projekt) %> |

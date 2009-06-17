@@ -1,5 +1,4 @@
-<h1>Listing buchungs</h1>
-
+<h1>Buchungsübersicht</h1>
 <table>
   <tr>
     <th>Mitarbeiter</th>
@@ -14,21 +13,19 @@
 
 <% @buchungs.each do |buchung| %>
   <tr>
-    <td><%=h buchung.mitarbeiter %></td>
-    <td><%=h buchung.projekt %></td>
+    <td><%=h buchung.mitarbeiter.name %></td>
+    <td><%=h buchung.projekt.name %></td>
     <td><%=h buchung.woche %></td>
     <td><%=h buchung.jahr %></td>
     <td><%=h buchung.geleistet %></td>
     <td><%=h buchung.gebucht %></td>
     <td><%=h buchung.beschreibung %></td>
     <td><%=h buchung.bestaetigung %></td>
-    <td><%= link_to 'Show', buchung %></td>
-    <td><%= link_to 'Edit', edit_buchung_path(buchung) %></td>
-    <td><%= link_to 'Destroy', buchung, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Bestätigen', buchung %></td>
+    <td><%= link_to 'Delegieren', buchung %></td>
+%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New buchung', new_buchung_path %>

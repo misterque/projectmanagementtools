@@ -1,16 +1,15 @@
-<h1>New buchung</h1>
+<h1>Neue Buchung für Projekt <%= @projekt.name %></h1>
 
 <% form_for(@buchung) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :mitarbeiter %><br />
-    <%= f.text_field :mitarbeiter %>
+
+	<%= select("buchung", "mitarbeiter_id", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) %>
   </p>
-  <p>
-    <%= f.label :projekt %><br />
-    <%= f.text_field :projekt %>
-  </p>
+
+	<%= f.hidden_field :projekt_id %>
   <p>
     <%= f.label :woche %><br />
     <%= f.text_field :woche %>
@@ -18,10 +17,6 @@
   <p>
     <%= f.label :jahr %><br />
     <%= f.text_field :jahr %>
-  </p>
-  <p>
-    <%= f.label :geleistet %><br />
-    <%= f.text_field :geleistet %>
   </p>
   <p>
     <%= f.label :gebucht %><br />
@@ -32,12 +27,8 @@
     <%= f.text_area :beschreibung %>
   </p>
   <p>
-    <%= f.label :bestaetigung %><br />
-    <%= f.text_area :bestaetigung %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Speichern' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', buchungs_path %>
+<%= link_to 'Abbruch', projekt_path(@projekt)%>

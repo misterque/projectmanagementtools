@@ -1,35 +1,5 @@
-<h1>New projekt</h1>
+<h1>Neues Projekt anlegen</h1>
 
-<% form_for(@projekt) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => "form" %>
 
-  <p>
-    <%= f.label :mitarbeiter %><br />
-    <%= f.text_field :mitarbeiter %>
-  </p>
-  <p>
-    <%= f.label :buchung %><br />
-    <%= f.text_field :buchung %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :fertigstellungsgrad %><br />
-    <%= f.text_field :fertigstellungsgrad %>
-  </p>
-  <p>
-    <%= f.label :einstufungsgrad %><br />
-    <%= f.text_field :einstufungsgrad %>
-  </p>
-  <p>
-    <%= f.label :budget %><br />
-    <%= f.text_field :budget %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', projekts_path %>
+<%= link_to 'Zurück', projekts_path %>

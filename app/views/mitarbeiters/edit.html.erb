@@ -1,28 +1,6 @@
 <h1>Editing mitarbeiter</h1>
 
-<% form_for(@mitarbeiter) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :wochenstunden %><br />
-    <%= f.text_field :wochenstunden %>
-  </p>
-  <p>
-    <%= f.label :buchung %><br />
-    <%= f.text_field :buchung %>
-  </p>
-  <p>
-    <%= f.label :projekt %><br />
-    <%= f.text_field :projekt %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Show', @mitarbeiter %> |
 <%= link_to 'Back', mitarbeiters_path %>

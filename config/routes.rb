@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :buchungs
 
-  map.resources :projekts
+  map.resources :projekts, :has_many => :buchungs
 
   map.resources :mitarbeiters
 

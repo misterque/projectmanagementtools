@@ -1,4 +1,4 @@
 class Mitarbeiter < ActiveRecord::Base
-  has_many :buchung
-  has_many :projekt
+  has_many :buchungs
+  has_many :projekts
 end

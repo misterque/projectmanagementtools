@@ -3,7 +3,7 @@ class BuchungsController < ApplicationController
   # GET /buchungs.xml
   def index
     @buchungs = Buchung.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @buchungs }
@@ -24,7 +24,9 @@ class BuchungsController < ApplicationController
   # GET /buchungs/new
   # GET /buchungs/new.xml
   def new
+    @projekt = Projekt.find(params[:projekt_id])
     @buchung = Buchung.new
+    @buchung.projekt = @projekt
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +43,7 @@ class BuchungsController < ApplicationController
   # POST /buchungs.xml
   def create
     @buchung = Buchung.new(params[:buchung])
+    @projekt = @buchung.projekt
 
     respond_to do |format|
       if @buchung.save

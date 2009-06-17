@@ -1,36 +1,5 @@
-<h1>Editing projekt</h1>
+<h1>Projekt bearbeiten</h1>
+<%= render :partial => "form" %>
 
-<% form_for(@projekt) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :mitarbeiter %><br />
-    <%= f.text_field :mitarbeiter %>
-  </p>
-  <p>
-    <%= f.label :buchung %><br />
-    <%= f.text_field :buchung %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :fertigstellungsgrad %><br />
-    <%= f.text_field :fertigstellungsgrad %>
-  </p>
-  <p>
-    <%= f.label :einstufungsgrad %><br />
-    <%= f.text_field :einstufungsgrad %>
-  </p>
-  <p>
-    <%= f.label :budget %><br />
-    <%= f.text_field :budget %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @projekt %> |
-<%= link_to 'Back', projekts_path %>
+<%= link_to 'Anzeigen', @projekt %> |
+<%= link_to 'Zurück', projekts_path %>

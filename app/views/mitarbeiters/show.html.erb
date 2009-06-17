@@ -9,15 +9,18 @@
 </p>
 
 <p>
-  <b>Buchung:</b>
-  <%=h @mitarbeiter.buchung %>
+<% if !@mitarbeiter.projekts.blank? %>
+<b>leitet folgende Projekte:</b>
+
+  <% for p in @mitarbeiter.projekts %>
+    <%=h p.name %>
+  <% end %>
+<% else %>
+<b>leitet keine Projekte</b>  
+<% end %>
+
 </p>
 
-<p>
-  <b>Projekt:</b>
-  <%=h @mitarbeiter.projekt %>
-</p>
 
-
-<%= link_to 'Edit', edit_mitarbeiter_path(@mitarbeiter) %> |
-<%= link_to 'Back', mitarbeiters_path %>
+<%= link_to 'Bearbeiten', edit_mitarbeiter_path(@mitarbeiter) %> |
+<%= link_to 'Zurück', mitarbeiters_path %>
