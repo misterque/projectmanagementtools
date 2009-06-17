@@ -1,0 +1,28 @@
+<% form_for(@projekt) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :mitarbeiter %><br />
+
+	<%= select("projekt", "mitarbeiter_id", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :fertigstellungsgrad %><br />
+    <%= f.text_field :fertigstellungsgrad %>
+  </p>
+  <p>
+    <%= f.label :einstufungsgrad %><br />
+    <%= f.text_field :einstufungsgrad %>
+  </p>
+  <p>
+    <%= f.label :budget %><br />
+    <%= f.text_field :budget %>
+  </p>
+  <p>
+    <%= f.submit 'Speichern' %>
+  </p>
+<% end %>
