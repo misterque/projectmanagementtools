@@ -11,9 +11,10 @@
 
 <p style="color: green"><%= flash[:notice] %></p>
 
-<%= link_to 'Projektübersicht(Managment)', projekts_path %>
+<%= link_to 'Projektübersicht(Management)', projekts_path %>
+<%= link_to 'Mitarbeiterauslastung(Management & Personalverwaltung)', 'mitarbeiterauslastung' %>
 <%= link_to 'Mitarbeiter(Personalverwaltung)', mitarbeiters_path %>
-<%= link_to 'Projektbeteiligungen(Mitarbeiter=1)', mitarbeiter_path(Mitarbeiter.find_by_id(1)) %>
+<%= link_to 'Projektbeteiligungen(Mitarbeiter=1)', :controller => :mitarbeiters, :action => :show, :id => 1%>
 
 <%= yield %>
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090617171555) do
+ActiveRecord::Schema.define(:version => 20090628142424) do
 
 # Could not dump table "buchungs" because of following StandardError
 #   Unknown type 'mitarbeiter' for column 'delegieren'

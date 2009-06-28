@@ -9,6 +9,10 @@
 
   </p>
   <p>
+    <%= f.label :stunden %><br />
+    <%= f.text_field :stunden, :value => @buchung.gebucht %>
+  </p>
+  <p>
     <%= f.label :grund %><br />
     <%= f.text_area :grund %>
   </p>

@@ -23,17 +23,30 @@
 <p>
 <% if !@mitarbeiter.buchungs.blank? %>
 <b>ist für folgende Projekte gebucht</b>
-
-  <% for b in @mitarbeiter.buchungs %>
-   <%= b.projekt.name%>
-(
+<table>
+	<tr>
+		<th>Jahr</th>
+		<th>Woche</th>
+		<th>Projekt</th>
+		<th>Aktionen</th>
+		</tr>
+  <% for b in @mitarbeiter.buchungs.find(:all, :order =>"jahr, woche") %>
+<tr>
+ <td> <%= b.jahr%></td>
+ <td> <%= b.woche%></td>
+ <td> <%= b.projekt.name%></td>
+ <td> (
     <%= link_to 'delegieren', depute_buchung_path(b)%>
 |
 <%= link_to 'bestätigen', confirm_buchung_path(b) %>
 )
+</td>
 
-
+</tr>
   <% end %>
+
+</table>
+
 <% else %>
 <b>ist nicht gebucht</b>  
 <% end %>

@@ -1,0 +1,28 @@
+<h1>Mitarbeiterauslastungsübersicht (nichtfunktionaler Prototyp)</h1>
+
+<table>
+  <tr>
+	<th>Mitarbeiter/Woche</th>
+    <th>24</th>
+    <th>25</th>
+    <th>26</th>
+    <th>27</th>
+    <th>28</th>
+    <th>29</th>
+
+  </tr>
+
+<% @mitarbeiters.each do |mitarbeiter| %>
+  <tr>
+    <td><%=h mitarbeiter.name %></td>
+    <td>0%</td>
+    <td>0%</td>
+    <td>0%</td>
+    <td>0%</td>
+    <td>0%</td>
+    <td>0%</td>
+  </tr>
+<% end %>
+</table>
+
+<br />

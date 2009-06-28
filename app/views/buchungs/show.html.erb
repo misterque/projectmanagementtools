@@ -1,11 +1,11 @@
 <p>
   <b>Mitarbeiter:</b>
-  <%=h @buchung.mitarbeiter %>
+  <%=h @buchung.mitarbeiter.name %>
 </p>
 
 <p>
   <b>Projekt:</b>
-  <%=h @buchung.projekt %>
+  <%=h @buchung.projekt.name %>
 </p>
 
 <p>
@@ -38,6 +38,3 @@
   <%=h @buchung.bestaetigung %>
 </p>
 
-
-<%= link_to 'Edit', edit_buchung_path(@buchung) %> |
-<%= link_to 'Back', buchungs_path %>

@@ -39,6 +39,11 @@ class MitarbeitersController < ApplicationController
     @mitarbeiter = Mitarbeiter.find(params[:id])
   end
 
+  def auslastung
+    @mitarbeiters = Mitarbeiter.find(:all)
+  end
+
+
   # POST /mitarbeiters
   # POST /mitarbeiters.xml
   def create

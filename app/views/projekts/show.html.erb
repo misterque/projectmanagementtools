@@ -81,12 +81,12 @@
 
 
 <% if @mitarbeiter %>
-<%= link_to 'Edit', edit_mitarbeiter_projekt_path(@mitarbeiter, @projekt) %> |
+<%= link_to 'Bearbeiten', edit_mitarbeiter_projekt_path(@mitarbeiter, @projekt) %> |
 
-<%= link_to 'Back', mitarbeiter_path(@mitarbeiter) %>
+<%= link_to 'Zurück', mitarbeiter_path(@mitarbeiter) %>
 
 <% else %>
-<%= link_to 'Edit', edit_projekt_path(@projekt) %> |
-<%= link_to 'Back', projekts_path %>
+<%= link_to 'Bearbeiten', edit_projekt_path(@projekt) %> |
+<%= link_to 'Zurück', projekts_path %>
 
 <% end %>
