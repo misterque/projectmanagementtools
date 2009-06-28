@@ -1,37 +1,92 @@
 <h1>Projekt: <%= @projekt.name%></h1>
 <p>
-  <b>Projektleiter:</b>
-  <%=h @projekt.mitarbeiter.name %>
+	<b>Projektleiter:</b>
+	<%=h @projekt.mitarbeiter.name %>
 </p>
 
 <p>
-  <b>Buchungen:</b>
-  <%=h @projekt.buchungs %>
+<% if !@projekt.buchungs.blank? %>
+<b>Buchungen:</b>
+<table>
+	<tr>
+		<th>Mitarbeiter</th>
+		<th>Woche</th>
+		<th>Jahr</th>
+		<th>gebucht</th>
+		<th>bestätigt</th>
+		<th>Status</th>
+		<th></th>
+
+	</tr>
+	
+
+<% for b in @projekt.buchungs %>
+	<tr>
+		<% if b.mitarbeiter%>
+		<td><%= b.mitarbeiter.name%></td>
+		<% else %>
+		<td>gelöschter Mitarbeiter</td>
+		<% end%>
+		<td><%= b.woche%></td>
+		<td><%= b.jahr%></td>
+		<td><%= b.gebucht%></td>
+		<td><%= b.geleistet%></td>
+		<td>
+		<% if !b.geleistet.blank? %>
+		<%= "erledigt"%>
+		<% end %>
+		</td>
+		<td>
+		<% if !b.delegieren.blank? %>
+			bitte an 
+			<b>
+			<%= Mitarbeiter.find_by_id(b.delegieren).name %>
+			</b>
+			delegieren:
+			<%= b.grund %>
+			(
+			<%= link_to 'bestätigen' %>
+			| zum arbeiten zwingen)
+		<% end %>
+		</td>
+		
+	</tr>
+<% end %>
+</table>
+<% else %>
+<b>keine Mitarbeiter gebucht</b>
+<% end %>
+
 </p>
 
 <p>
-  <b>Name:</b>
-  <%=h @projekt.name %>
+	<b>Fertigstellungsgrad:</b>
+	<%=h @projekt.fertigstellungsgrad %>
 </p>
 
 <p>
-  <b>Fertigstellungsgrad:</b>
-  <%=h @projekt.fertigstellungsgrad %>
+	<b>Einstufungsgrad:</b>
+	<%=h @projekt.einstufungsgrad %>
 </p>
 
 <p>
-  <b>Einstufungsgrad:</b>
-  <%=h @projekt.einstufungsgrad %>
-</p>
-
-<p>
-  <b>Budget:</b>
-  <%=h @projekt.budget %>
+	<b>Budget (verbraucht/gebucht/gesammt):</b>
+	<%=h @projekt.buchungs.sum('geleistet') %> /
+	<%=h @projekt.buchungs.sum('gebucht') %> /
+	<%=h @projekt.budget %>
 </p>
 
 
 <%= link_to 'Mitarbeiter buchen', new_projekt_buchung_path(@projekt) %>
 
 
+<% if @mitarbeiter %>
+<%= link_to 'Edit', edit_mitarbeiter_projekt_path(@mitarbeiter, @projekt) %> |
+
+<%= link_to 'Back', mitarbeiter_path(@mitarbeiter) %>
+
+<% else %>
 <%= link_to 'Edit', edit_projekt_path(@projekt) %> |
 <%= link_to 'Back', projekts_path %>
+
+<% end %>

@@ -1,9 +1,14 @@
 class BuchungsController < ApplicationController
+  layout "test"
+  
   # GET /buchungs
   # GET /buchungs.xml
   def index
-    @buchungs = Buchung.all
-    
+    if params[:mitarbeiter_id]
+      @buchungs = Buchung.find_all_by_mitarbeiter_id(params[:mitarbeiter_id])
+    else
+      @buchungs = Buchung.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @buchungs }
@@ -84,5 +89,13 @@ class BuchungsController < ApplicationController
       format.html { redirect_to(buchungs_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def depute
+    @buchung = Buchung.find(params[:id])
+  end
+  
+  def confirm
+    @buchung = Buchung.find(params[:id])
   end
 end

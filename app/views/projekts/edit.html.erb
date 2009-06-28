@@ -1,5 +1,12 @@
 <h1>Projekt bearbeiten</h1>
-<%= render :partial => "form" %>
+<% if @mitarbeiter %>
+<%= render :partial => "formmitarbeiter" %>
+<%= link_to 'Zurück', mitarbeiter_path(@mitarbeiter) %>
 
-<%= link_to 'Anzeigen', @projekt %> |
+
+<% else %>
+<%= render :partial => "form" %>
 <%= link_to 'Zurück', projekts_path %>
+
+
+<% end %>

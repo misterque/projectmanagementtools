@@ -13,10 +13,29 @@
 <b>leitet folgende Projekte:</b>
 
   <% for p in @mitarbeiter.projekts %>
-    <%=h p.name %>
+    <%= link_to p.name, mitarbeiter_projekt_path(@mitarbeiter, p) %>
   <% end %>
 <% else %>
 <b>leitet keine Projekte</b>  
+<% end %>
+</p>
+
+<p>
+<% if !@mitarbeiter.buchungs.blank? %>
+<b>ist für folgende Projekte gebucht</b>
+
+  <% for b in @mitarbeiter.buchungs %>
+   <%= b.projekt.name%>
+(
+    <%= link_to 'delegieren', depute_buchung_path(b)%>
+|
+<%= link_to 'bestätigen', confirm_buchung_path(b) %>
+)
+
+
+  <% end %>
+<% else %>
+<b>ist nicht gebucht</b>  
 <% end %>
 
 </p>

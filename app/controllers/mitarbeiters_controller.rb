@@ -1,4 +1,6 @@
 class MitarbeitersController < ApplicationController
+  layout "test"
+  
   # GET /mitarbeiters
   # GET /mitarbeiters.xml
   def index

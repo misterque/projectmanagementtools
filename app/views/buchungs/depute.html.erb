@@ -1,0 +1,20 @@
+<h1>Buchung delegieren</h1>
+
+<% form_for(@buchung) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :mitarbeiter %><br />
+	<%= select("buchung", "delegieren", Mitarbeiter.all.collect {|p| [ p.name, p.id ] }) %>
+
+  </p>
+  <p>
+    <%= f.label :grund %><br />
+    <%= f.text_area :grund %>
+  </p>
+  <p>
+    <%= f.submit 'Delegieren' %>
+  </p>
+<% end %>
+
+<%= link_to 'Zurück', mitarbeiter_path(@buchung.mitarbeiter) %>

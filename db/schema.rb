@@ -9,20 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090616190642) do
+ActiveRecord::Schema.define(:version => 20090617171555) do
 
-  create_table "buchungs", :force => true do |t|
-    t.integer  "mitarbeiter_id"
-    t.integer  "projekt_id"
-    t.integer  "woche"
-    t.integer  "jahr"
-    t.float    "geleistet"
-    t.float    "gebucht"
-    t.text     "beschreibung"
-    t.text     "bestaetigung"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "buchungs" because of following StandardError
+#   Unknown type 'mitarbeiter' for column 'delegieren'
 
   create_table "mitarbeiters", :force => true do |t|
     t.string   "name"

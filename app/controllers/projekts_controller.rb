@@ -1,8 +1,13 @@
 class ProjektsController < ApplicationController
+  layout "test"
   # GET /projekts
   # GET /projekts.xml
   def index
-    @projekts = Projekt.all
+    if params[:mitarbeiter_id]
+      @projekts = Projekt.find_all_by_mitarbeiter_id(params[:mitarbeiter_id])
+    else
+      @projekts = Projekt.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +19,9 @@ class ProjektsController < ApplicationController
   # GET /projekts/1.xml
   def show
     @projekt = Projekt.find(params[:id])
+    if params[:mitarbeiter_id]
+      @mitarbeiter = Mitarbeiter.find(params[:mitarbeiter_id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,6 +43,10 @@ class ProjektsController < ApplicationController
   # GET /projekts/1/edit
   def edit
     @projekt = Projekt.find(params[:id])
+    if params[:mitarbeiter_id]
+      @mitarbeiter = Mitarbeiter.find(params[:mitarbeiter_id])
+    end
+    
   end
 
   # POST /projekts

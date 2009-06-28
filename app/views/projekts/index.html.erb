@@ -6,7 +6,10 @@
     <th>Projektleiter</th>
     <th>Fertigstellungsgrad</th>
     <th>Einstufungsgrad</th>
-    <th>Budget</th>
+    <th>verbraucht</th>
+    <th>/ gebucht</th>
+    <th>/ gesammt (Budget in Mannstunden)</th>
+
   </tr>
 
 <% @projekts.each do |projekt| %>
@@ -15,7 +18,9 @@
     <td><%=h projekt.mitarbeiter.name %></td>
     <td><%=h projekt.fertigstellungsgrad %>%</td>
     <td><%=h projekt.einstufungsgrad %>%</td>
-    <td><%=h projekt.budget %> (in Mitarbeiterstunden)</td>
+	<td><%=h projekt.buchungs.sum('geleistet') %> /</td>
+	<td><%=h projekt.buchungs.sum('gebucht') %> /</td>
+	<td><%=h projekt.budget %></td>
     <td><%= link_to 'Details', projekt %></td>
     <td><%= link_to 'Bearbeiten', edit_projekt_path(projekt) %></td>
     <td><%= link_to 'Löschen', projekt, :confirm => 'Sicher?', :method => :delete %></td>
